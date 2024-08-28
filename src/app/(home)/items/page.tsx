@@ -1,3 +1,3 @@
 export default function Page() {
-    return <p>Items Page</p>;
+    return <p className="text-2xl font-bold underline">Items Page</p>;
   }
