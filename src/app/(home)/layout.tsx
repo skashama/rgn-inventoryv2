@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 //import "./globals.css";
+import Menu from "@/app/(home)/components/menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,15 @@ export default function homeLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <div className={inter.className}>{children}</div>
+      <div className="h-screen flex">
+        {/* LEFT */}
+        <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]">
+          <Menu />
+        </div>
+        {/* RIGHT */}
+        <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll p-6">
+            {children}      
+        </div>
+      </div>
   );
 }
